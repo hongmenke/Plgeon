@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".View.SetUrl">
+
+    <TextView
+            android:text="设置你的推送url"
+            android:layout_width="233dp"
+            android:layout_height="43dp" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" android:textColor="@color/black" android:textSize="24sp"
+            android:layout_marginStart="16dp"/>
+    <EditText
+            android:layout_width="319dp"
+            android:layout_height="61dp"
+            android:inputType="textPersonName"
+            android:text="https://api.day.app/****/"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/urlTextView" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="156dp" app:layout_constraintHorizontal_bias="0.497" android:minHeight="48dp"/>
+    <TextView
+            android:text="设置完成之后，可以点击测试按钮测试一下"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" android:layout_marginStart="16dp"/>
+    <Button
+            android:text="保存"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/saveUrlButton"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintTop_toBottomOf="@+id/urlTextView" android:layout_marginTop="60dp"
+            android:textSize="20sp"/>
+    <Button
+            android:text="测试"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/testButton"
+            app:layout_constraintVertical_bias="0.114" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/saveUrlButton"
+            app:layout_constraintHorizontal_bias="0.507" android:textSize="20sp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
