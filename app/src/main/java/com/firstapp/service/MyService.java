@@ -26,9 +26,10 @@ public class MyService extends Service {
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         NotificationChannel mChannel = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            mChannel = new NotificationChannel("1000", "Service", NotificationManager.IMPORTANCE_HIGH);
+            mChannel = new NotificationChannel("1000", "Service", NotificationManager.IMPORTANCE_MIN);
             notificationManager.createNotificationChannel(mChannel);
-            Notification notification = new Notification.Builder(getApplicationContext(), "1000").build();
+            Notification notification = new Notification.Builder(getApplicationContext(), "1000")
+                    .build();
             startForeground(1, notification);
         }
         IntentFilter localIntentFilter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
