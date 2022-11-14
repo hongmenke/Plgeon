@@ -80,7 +80,15 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            startForegroundService(new Intent(MainActivity.this, MyService.class));}
+                //适配8.0以上的服务转前台服务 清单文件AndroidManifest中有配置 android.permission.FOREGROUND_SERVICE
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    //适配8.0机制
+                    startForegroundService(new Intent(MainActivity.this, MyService.class));
+                } else {
+                    startService(new Intent(MainActivity.this, MyService.class));
+                }
+            //startForegroundService(new Intent(MainActivity.this, MyService.class))
+            ;}
         });
 
     }
